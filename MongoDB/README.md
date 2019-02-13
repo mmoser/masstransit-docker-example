@@ -17,7 +17,7 @@ This page describes the installation of MongoDB and Mongo Express with the use o
     ```
 4. Run this command
    ```
-   docker-compose -f mongo-compose.yml up
+   docker-compose -f mongo-compose.yml up -d
    ```
 5. Go to http://localhost:8081 to see mongoexpress
 6. You can set up your Robo 3T (if you have it) to connect to `localhost:27017` with username `root` and password `example`
