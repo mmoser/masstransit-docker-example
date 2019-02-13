@@ -1,11 +1,11 @@
 # Mass Transit Docker Example
 
-This will allow a user to run Mass Transit with consumers and sagas on a Docker RabbitMQ Cluster with a Docker Mongo DB Backend for persisting the Sagas.
+This will allow a user to run [Mass Transit](https://masstransit-project.com/) with consumers and sagas on a [RabbitMQ](https://www.rabbitmq.com/) Cluster with a Mongo DB Backend for persisting the Sagas. This will all use [Docker](https://www.docker.com/) containers.
 
 ### Pre-Installation Steps
 
-1. Follow the steps here to create a Docker RabbitMQ Cluster https://github.com/mmoser/masstransit-docker-example/tree/master/RabbitMQ%20Cluster
-2. Follow the steps here to install/run Docker MongoDB Container https://github.com/mmoser/masstransit-docker-example/tree/master/MongoDB
+1. Follow the steps here to create a Docker RabbitMQ Cluster [RabbitMQ Docker Cluster Steps](https://github.com/mmoser/masstransit-docker-example/tree/master/RabbitMQ%20Cluster)
+2. Follow the steps here to install/run Docker MongoDB Container [MongoDB Docker Steps](https://github.com/mmoser/masstransit-docker-example/tree/master/MongoDB)
 
 ### Build Steps
 
@@ -40,4 +40,6 @@ This will allow a user to run Mass Transit with consumers and sagas on a Docker 
    docker stop rabbit1
    docker rm rabbit2
    docker rm rabbit1
+
+   docker network rm mynetwork
    ``` 

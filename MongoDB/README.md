@@ -6,6 +6,7 @@ This page describes the installation of MongoDB and Mongo Express with the use o
 
 * Docker is installed on your machine  https://docs.docker.com/
 * You have a docker hub account. If not, go create one: https://hub.docker.com/
+* Ensure that you have any previously installed MongoDB services turned off
 
 ### Install Steps
 
