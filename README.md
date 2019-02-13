@@ -15,16 +15,29 @@ This will allow a user to run Mass Transit with consumers and sagas on a Docker 
    ```
     docker build -t servicebus .
    ```
-4. Run the following command to start the service bus with the name of `servicebus1`
+### Run Steps
+
+1. Run the following command to start the service bus with the name of `servicebus1`
    ```
    docker run -d --name servicebus1 servicebus
    ```
-5. Run the following to see the logs
+2. Run the following to see the logs
    ```
    docker logs servicebus1 --follow
    ```
-6. In order to stop it run the following
+
+### Teardown Steps
+
+1. In order to stop it and remove the containers run the following
    ```
    docker stop servicebus1
    docker rm servicebus1
+
+   cd MongoDB 
+   docker-compose -f mongo-compose.yml down
+
+   docker stop rabbit2
+   docker stop rabbit1
+   docker rm rabbit2
+   docker rm rabbit1
    ``` 
