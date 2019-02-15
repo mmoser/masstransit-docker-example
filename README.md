@@ -4,8 +4,9 @@ This will allow a user to run [Mass Transit](https://masstransit-project.com/) w
 
 ### Pre-Installation Steps
 
-1. Follow the steps here to create a Docker RabbitMQ Cluster [RabbitMQ Docker Cluster Steps](https://github.com/mmoser/masstransit-docker-example/tree/master/RabbitMQ%20Cluster)
-2. Follow the steps here to install/run Docker MongoDB Container [MongoDB Docker Steps](https://github.com/mmoser/masstransit-docker-example/tree/master/MongoDB)
+1. Clone the repo
+2. Follow the steps here to create a Docker RabbitMQ Cluster [RabbitMQ Docker Cluster Steps](https://github.com/mmoser/masstransit-docker-example/tree/master/RabbitMQ%20Cluster)
+3. Follow the steps here to install/run Docker MongoDB Container [MongoDB Docker Steps](https://github.com/mmoser/masstransit-docker-example/tree/master/MongoDB)
 
 ### Build Steps
 
