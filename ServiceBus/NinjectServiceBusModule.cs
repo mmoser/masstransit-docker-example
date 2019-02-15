@@ -27,6 +27,7 @@ namespace ServiceBus
     private ILoggerFactory _loggerFactory;
     private readonly List<Action<IReceiveEndpointConfigurator>> _sagaActions = new List<Action<IReceiveEndpointConfigurator>>();
     private readonly List<Action<IReceiveEndpointConfigurator>> _consumerActions = new List<Action<IReceiveEndpointConfigurator>>();
+    private bool _enableSagas = false;
 
     public override void Load()
     {
@@ -37,10 +38,16 @@ namespace ServiceBus
       _configurationRoot = builder.Build();
 
       Kernel.Bind<IConfigurationRoot>().ToMethod(context => _configurationRoot);
+      _enableSagas = Convert.ToBoolean(_configurationRoot["enableSagas"]);
 
       CreateLoggerAndRegister();
       RegisterServices();
-      RegisterRepositories();
+
+      if (_enableSagas)
+      {
+        RegisterRepositories();
+      }
+
       RegisterServiceBus();
     }
 
@@ -67,7 +74,11 @@ namespace ServiceBus
       _logger.LogInformation("Registering the Service Bus");
 
       RegisterConsumers();
-      RegisterSagas();
+
+      if (_enableSagas)
+      {
+        RegisterSagas();
+      }
 
       Kernel.Bind<IBusControl, IBus>().ToMethod(context =>
       {
